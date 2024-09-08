@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body style="background-color: #E3E9FF;">
+    <header>
+        <div class="logo">
+            <img src="css/logo - sticker.png" id="image" alt="Logo">
+        </div>
+        <nav>
+            <ul style="list-style:none; display: flex; justify-content: center; gap: 130px;">
+                <li><a href="#" id="link" style="color: black;">Home</a></li>
+                <li><a href="#" id="link" style="color: black;">Features</a></li>
+                <li><a href="#" id="link" style="color: black;">Pricing</a></li>
+                <li><a href="#" id="link" style="color: black;">About Us</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Search">
+        <div class="icon">
+            <img src="css/user icon.png" alt="User Icon">
+        </div>
+    </header>
+    
+    <aside></aside>
+    
+    <section>
+        <div style="margin-left: 5.2%;">
+            <div class="top-left">MY PROFILE</div>
+            <div class="left-btn1">
+                <button>MY PROFILE</button>
+            </div>
+            <div class="left-btn2">
+                <button>EDIT PROFILE</button>
+            </div>
+            <div class="left-btn3">
+                <button>ACCOUNT SETTINGS</button>
+            </div>
+            <div class="left-btn4">
+                <button>LOG OUT</button>
+            </div>
+            <div class="line"></div>
+            <div class="glass"></div>
+        </div>
+
+        <div>
+            <table class="form1">
+                <tr>
+                    <td><label for="prn">PRN:</label></td>
+                    <td><input type="text" id="prn" value="{{user.prn}}" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" value="{{user.name}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" value="{{user.email}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="tel">Contact No:</label></td>
+                    <td><input type="tel" id="tel" value="{{user.contact}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address:</label></td>
+                    <td>
+                        {{#if user.address}}
+                            <input type="text" id="address" value="{{user.address}}">
+                        {{else}}
+                            <input type="text" id="address" placeholder="Not added yet">
+                        {{/if}}
+                    </td>
+                </tr>
+            </table>
+            
+            <table class="form2">
+                <tr>
+                    <td><label for="dob">DOB:</label></td>
+                    <td><input type="date" id="dob" value="{{user.date}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="branch">Branch:</label></td>
+                    <td><input type="text" id="branch" value="{{user.branch}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="year">Year:</label></td>
+                    <td>
+                        {{#if user.year}}
+                            <input type="text" id="year" value="{{user.year}}">
+                        {{else}}
+                            <input type="text" id="year" placeholder="Not added yet">
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="roomReference">Room Reference:</label></td>
+                    <td><input type="text" id="roomReference" value="{{user.roomReference}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="roomNo">Room No:</label></td>
+                    <td>
+                        {{#if user.roomNo}}
+                            <input type="text" id="roomNo" value="{{user.roomNo}}">
+                        {{else}}
+                            <input type="text" id="roomNo" placeholder="Not added yet">
+                        {{/if}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="extra">
+            <section style="margin-top: 600px;">
+                <h2>Complaints</h2>
+                <ul>
+                    {{#each complaints}}
+                        <li>{{this.category}} - {{this.message}} - {{this.createdAt}}</li>
+                    {{/each}}
+                </ul>
+
+               <h2>Leaves</h2>
+               <ul>
+                  {{#each leaves}}
+                        <li>{{this.leaveDate}} to {{this.leaveTo}} - {{this.leaveReason}}</li>
+                  {{/each}}
+                </ul>
+                 <h2>Canteen Orders</h2>
+<ul>
+    {{#each canteenOrders}}
+        <li>
+            {{this.orderType}} - 
+            <ul>
+                {{#each this.items}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul> - {{this.createdAt}}
+        </li>
+    {{/each}}
+</ul>
+
+            </section>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="bottom-right">
+            <img src="D:\New Start to Coding\Hostel Management Website\Bottom Purple Sticker.png" width="260" height="270" alt="Bottom Sticker">
+        </div>
+    </footer>
+</body>
+</html>

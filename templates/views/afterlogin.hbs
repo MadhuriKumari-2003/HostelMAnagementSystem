@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After login</title>
+    <link rel="stylesheet" href="css/afterlogin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {{>nav}}
+    <main>   
+      <nav>
+        <div class="intro">
+          <div class="greeting">
+            <div class="identity">
+              <h3 class="welcome" id="msg">Hello </h3>
+              <p class="welcome" id="userid">{{userName}}</p>
+            </div>
+          </div>
+            <div class="greeting1">
+              <div class="identity1">
+                <button class="welcome" id="Logoutbtn">Logout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section>
+      
+        <div class="container1 ">
+          <div class="row">
+            <div class="container">
+              <button class="btn" id="profile" name="profile">
+                <p class="content">Profile</p>
+              </button>
+            </div>
+            <div class="container">
+              <button class="btn" id="edit_profile" name="edit_profile">
+                <p class="content">Edit Profile</p>
+              </button>
+            </div>
+            <div class="container">
+              <button class="btn" id="Complain" name="Complain">
+                <p class="content">Complain Box</p>
+              </button>
+            </div>
+            <div class="container">
+              <button class="btn" id="Canteen" name="Canteen">
+                <p class="content">Canteen Registration</p>
+              </button>
+            </div>
+          </div>
+          <div class="row1">
+            <div class="container">
+              <button class="btn" id="Sports" name="Sports">
+                <p class="content">Sports</p>
+              </button>
+            </div>
+            <div class="container">
+              <button class="btn" id="Leave_app" name="Leave_app">
+                <p class="content">Leave Application</p>
+              </button>
+            </div>
+            <div class="container">
+              <button class="btn" id="Terminate_req" name="Terminate_req">
+                <p class="content">Terminate Request(admin)</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+document.getElementById('Logoutbtn').addEventListener('click', function() {
+   window.location.href = '/logout';
+});
+ document.getElementById('edit_profile').addEventListener('click', function() {
+            window.location.href = '/edit_profile'; // Ensure this matches the route
+        });
+document.getElementById('profile').addEventListener('click', function() {
+   window.location.href = '/profile';
+});
+document.getElementById('Complain').addEventListener('click', function() {
+   window.location.href = '/complainBox';
+});
+document.getElementById('Canteen').addEventListener('click', function() {
+   window.location.href = '/canteen';
+});
+document.getElementById('Leave_app').addEventListener('click', function() {
+   window.location.href = '/leave';
+});
+document.getElementById('Sports').addEventListener('click', function() {
+   window.location.href = '/sports';
+});
+</script>
+  </body>
+</html>
